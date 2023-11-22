@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,98 +9,115 @@
     body {
       margin: 0;
       padding: 0;
-      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'ScaryFont', sans-serif;
     }
 
     #header {
       background-color: red;
-      text-align: center;
-      padding: 20px;
-      font-family: 'ScaryFont', cursive;
-      font-size: 2em;
       color: white;
-      animation: shake 0.5s ease-in-out infinite;
+      padding: 40px;
+      width: 100%;
+      text-align: center;
+      font-size: 36px;
+      animation: shake 0.5s infinite;
     }
 
     #tagline {
+      font-size: 24px;
       text-align: center;
-      font-size: 1.5em;
       margin-top: 20px;
     }
 
-    #about-us {
+    #about {
       background-color: yellow;
-      text-align: center;
       padding: 20px;
+      text-align: center;
       font-weight: bold;
-      font-size: 1.5em;
+      font-size: 24px;
+      transform: skewX(-15deg);
     }
 
     #description {
+      font-size: 18px;
       text-align: center;
-      font-size: 1.2em;
       margin-top: 20px;
     }
 
-    #blink {
-      animation: blink 1s infinite;
+    #warning {
       color: red;
+      font-weight: bold;
+      animation: blink 1s infinite;
     }
 
     #contact {
-      text-align: center;
-      margin-top: 20px;
       border: 2px solid black;
       padding: 10px;
+      margin-top: 20px;
       cursor: pointer;
+      color: green; /* 緑色に設定 */
     }
 
     #email {
       display: none;
-      font-size: 1.5em;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 10px;
     }
 
     @keyframes shake {
-      0%, 100% {
-        transform: translateX(0);
-      }
-      25%, 75% {
-        transform: translateX(-5px);
-      }
-      50% {
-        transform: translateX(5px);
-      }
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(5px); }
     }
 
     @keyframes blink {
-      50% {
-        opacity: 0;
-      }
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
     }
   </style>
 </head>
+
 <body>
 
-  <div id="header">地獄木工</div>
+  <div id="header">
+    地獄木工
+  </div>
 
-  <div id="tagline">写真はありません！俺はリアルだけ信じている。</div>
+  <div id="tagline">
+    写真はありません！俺らはリアルだけ信じている。
+  </div>
 
-  <div id="about-us">ABOUT US</div>
+  <div id="about">
+    ABOUT US
+  </div>
 
-  <div id="description">地獄木工は、櫻井風土による本気（マジ）木工所。マジな依頼だけお待ちしてます。</div>
+  <div id="description">
+    地獄木工は、櫻井風土（マジ）と富永虎太朗（サブ）による本気（マジ）木工所。マジな依頼だけお待ちしてます。
+  </div>
 
-  <div id="blink">櫻井風土はマジ</div>
+  <div id="warning">
+    櫻井風土は特にマジやで
+  </div>
 
-  <div id="contact" onclick="showEmail()">連絡したい場合はクリックして</div>
+  <div id="contact" onclick="showEmail()">
+    連絡したい場合はクリックして
+  </div>
 
-  <div id="email">jigokumokko@gmail.com</div>
+  <div id="email">
+    jigokumokko@gmail.com
+  </div>
 
   <script>
     function showEmail() {
-      document.getElementById("contact").style.display = "none";
-      document.getElementById("email").style.display = "block";
+      document.getElementById('email').style.display = 'block';
     }
   </script>
 
 </body>
+
 </html>
