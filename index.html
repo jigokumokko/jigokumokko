@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>地獄木工</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #header {
+      background-color: red;
+      text-align: center;
+      padding: 20px;
+      font-family: 'ScaryFont', cursive;
+      font-size: 2em;
+      color: white;
+      animation: shake 0.5s ease-in-out infinite;
+    }
+
+    #tagline {
+      text-align: center;
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    #about-us {
+      background-color: yellow;
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+      font-size: 1.5em;
+    }
+
+    #description {
+      text-align: center;
+      font-size: 1.2em;
+      margin-top: 20px;
+    }
+
+    #blink {
+      animation: blink 1s infinite;
+      color: red;
+    }
+
+    #contact {
+      text-align: center;
+      margin-top: 20px;
+      border: 2px solid black;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #email {
+      display: none;
+      font-size: 1.5em;
+    }
+
+    @keyframes shake {
+      0%, 100% {
+        transform: translateX(0);
+      }
+      25%, 75% {
+        transform: translateX(-5px);
+      }
+      50% {
+        transform: translateX(5px);
+      }
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="header">地獄木工</div>
+
+  <div id="tagline">写真はありません！俺はリアルだけ信じている。</div>
+
+  <div id="about-us">ABOUT US</div>
+
+  <div id="description">地獄木工は、櫻井風土による本気（マジ）木工所。マジな依頼だけお待ちしてます。</div>
+
+  <div id="blink">櫻井風土はマジ</div>
+
+  <div id="contact" onclick="showEmail()">連絡したい場合はクリックして</div>
+
+  <div id="email">jigokumokko@gmail.com</div>
+
+  <script>
+    function showEmail() {
+      document.getElementById("contact").style.display = "none";
+      document.getElementById("email").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
